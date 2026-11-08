@@ -1,4 +1,4 @@
-# Fassara — Multilingual Speech-to-Text and Translation
+# Fassara - Multilingual Speech-to-Text and Translation
 
 **Fassara** is a multilingual speech-to-text and translation application that processes Hausa and English audio. Users can record speech directly from their browser or upload existing audio files, transcribe the speech, translate it into the other supported language, and save their results.
 
