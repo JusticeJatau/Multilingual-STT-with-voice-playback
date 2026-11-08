@@ -10,7 +10,14 @@ const app = express();
 const port = process.env.PORT || 5000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", "https://fassara-nine.vercel.app/"}));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://fassara-nine.vercel.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins
+}));
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
