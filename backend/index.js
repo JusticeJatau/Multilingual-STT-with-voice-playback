@@ -7,6 +7,8 @@ import { connectDatabase } from "./config/db.js";
 import speechRoutes from "./routes/speechRoutes.js";
 
 const app = express();
+app.set("trust proxy", 1);
+
 const port = process.env.PORT || 5000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

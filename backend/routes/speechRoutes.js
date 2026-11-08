@@ -8,6 +8,11 @@ import {
   processSpeech,
   saveTranslation
 } from "../controllers/speechController.js";
+import {
+  speechProcessLimiter,
+  speechGenerateLimiter
+} from "../middleware/rateLimiter.js";
+
 
 const router = express.Router();
 const upload = multer({
@@ -19,8 +24,18 @@ const upload = multer({
   }
 });
 
-router.post("/speech/process", upload.single("audio"), processSpeech);
-router.post("/speech/generate", generateSpeech);
+
+router.post(
+  "/speech/process",
+  speechProcessLimiter,
+  upload.single("audio"),
+  processSpeech
+);
+router.post(
+  "/speech/generate",
+  speechGenerateLimiter,
+  generateSpeech
+);
 router.post("/history", saveTranslation);
 router.get("/history", getHistory);
 router.delete("/history/:id", deleteHistoryItem);
