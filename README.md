@@ -61,8 +61,8 @@ The application is deployed with:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/JusticeJatau/Multilingual-STT-and-voice-playback.git
-   cd Multilingual-STT-and-voice-playback
+   git clone https://github.com/JusticeJatau/Multilingual-STT-with-voice-playback.git
+   cd Multilingual-STT-with-voice-playback
    ```
 
 2. Install the root helper dependencies:
